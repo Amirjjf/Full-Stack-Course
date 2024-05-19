@@ -1,6 +1,3 @@
-# Sequence Diagram for Creating a New Note
-
-```mermaid
 sequenceDiagram
     participant user
     participant browser
