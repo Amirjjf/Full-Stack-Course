@@ -8,23 +8,26 @@ const Statistics = ({ good, neutral, bad }) => {
   if (all === 0) {
     return <p>No feedback given</p>;
   }
-  
+
   return (
-    <div>
-      <StatisticLine text="Good" value={good} />
-      <StatisticLine text="Neutral" value={neutral} />
-      <StatisticLine text="Bad" value={bad} />
-      <StatisticLine text="All" value={all} />
-      <StatisticLine text="Average" value={average.toFixed(1)} />
-      <StatisticLine text="Positive" value={positive.toFixed(1) + ' %'} />
-    </div>
+    <table>
+      <tbody>
+        <StatisticLine text="Good" value={good} />
+        <StatisticLine text="Neutral" value={neutral} />
+        <StatisticLine text="Bad" value={bad} />
+        <StatisticLine text="All" value={all} />
+        <StatisticLine text="Average" value={average.toFixed(1)} />
+        <StatisticLine text="Positive" value={positive.toFixed(1) + ' %'} />
+      </tbody>
+    </table>
   );
 };
 
 const StatisticLine = ({ text, value }) => (
-  <div>
-    {text}: {value}
-  </div>
+  <tr>
+    <td>{text}</td>
+    <td>{value}</td>
+  </tr>
 );
 
 const Button = ({ handleClick, text }) => (
